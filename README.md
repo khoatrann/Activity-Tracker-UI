@@ -1,6 +1,6 @@
 # ActivityTrackerUI
-
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.2.0.
+If Node is not yet installed go to: `https://nodejs.org/en/`. After sucessfully installing Node, run 
+`npm install -g @angular/cli` and `ng add @angular/material`. After that you should be able to run the development server below. 
 
 ## Development server
 
