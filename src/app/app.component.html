@@ -1,7 +1,7 @@
 <mat-toolbar color="primary">
   <mat-toolbar-row>
-    <button mat-icon-button>
-      <mat-icon (click)="sidenav.toggle();">menu</mat-icon>
+    <button mat-icon-button (click)="sidenav.toggle();">
+      <mat-icon>menu</mat-icon>
     </button>
     <h1>Activity Tracker</h1>
   </mat-toolbar-row>
@@ -10,13 +10,13 @@
 <mat-sidenav-container>
   <mat-sidenav #sidenav opened mode="side">
     <mat-nav-list>
-      <a mat-list-item>Home<mat-icon>home</mat-icon></a>
-      <a mat-list-item>Search<mat-icon>search</mat-icon></a>
-      <a mat-list-item>About<mat-icon>info</mat-icon></a>
+      <a mat-list-item routerLink="/Home" routerLinkActive="active">Home<mat-icon>home</mat-icon></a>
+      <a mat-list-item routerLink="/Search" routerLinkActive="active">Search<mat-icon>search</mat-icon></a>
+      <a mat-list-item routerLink="/About" routerLinkActive="active">About<mat-icon>info</mat-icon></a>
     </mat-nav-list>
   </mat-sidenav>
-  <mat-sidenav-content style="background-color: white;">
-    <p style="color: black;">TODO: ADD CONTENT</p>
+  <mat-sidenav-content>
+    <ng-content></ng-content>
     <router-outlet></router-outlet>
   </mat-sidenav-content>
 </mat-sidenav-container>
