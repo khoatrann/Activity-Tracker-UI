@@ -16,6 +16,10 @@ import { MatNativeDateModule } from '@angular/material/core';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatCardModule } from '@angular/material/card';
 import { HttpClientModule } from '@angular/common/http';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+import { ModalComponent } from './modal/modal.component';
+import { MatInputModule } from '@angular/material/input';
 
 
 @NgModule({
@@ -23,7 +27,8 @@ import { HttpClientModule } from '@angular/common/http';
     AppComponent,
     HomeComponent,
     SearchComponent,
-    AboutComponent
+    AboutComponent,
+    ModalComponent
   ],
   imports: [
     BrowserAnimationsModule,
@@ -38,7 +43,10 @@ import { HttpClientModule } from '@angular/common/http';
     MatNativeDateModule,
     MatFormFieldModule,
     MatCardModule,
-    HttpClientModule
+    HttpClientModule,
+    MatDialogModule,
+    MatSlideToggleModule,
+    MatInputModule
   ],
   providers: [],
   bootstrap: [AppComponent]

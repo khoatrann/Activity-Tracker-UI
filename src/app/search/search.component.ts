@@ -12,16 +12,15 @@ import { DataService } from '../services/data.service';
 export class SearchComponent implements AfterContentInit {
     list: any;
     selected: Date | any;
+    item: any;
 
     constructor(private httpClient: HttpClient, private dataService: DataService) {
 
     }
-    ngAfterContentInit() {
-        this.httpClient.get(`${environment.api}/search`).subscribe(res => {
+    async ngAfterContentInit() {
+        await this.httpClient.get(`${environment.api}/search`).subscribe(res => {
             this.list = res
         });
-
-        this.dataService.callMe();
     }
 
 }

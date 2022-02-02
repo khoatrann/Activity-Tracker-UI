@@ -3,11 +3,12 @@ import { Injectable } from '@angular/core';
 @Injectable({
     providedIn: 'root',
 })
-export class DataService {
 
+export class DataService {
+    item: any;
     constructor() { }
 
-    callMe(): void {
-        console.log("from data service");
+    setItem(value: any): void {
+        this.item = value;
     }
 }

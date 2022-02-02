@@ -1,4 +1,6 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { environment } from 'src/environments/environment';
 import { DataService } from '../services/data.service';
 
 @Component({
@@ -8,11 +10,15 @@ import { DataService } from '../services/data.service';
 })
 
 export class HomeComponent implements OnInit {
-    constructor(private dataService: DataService) {
+    dummyData: any;
+
+    constructor(private dataService: DataService, private httpClient: HttpClient) {
 
     }
 
-    ngOnInit(): void {
-        this.dataService.callMe()
+    async ngOnInit() {
+        const item = await this.httpClient.get(`${environment.api}/search`).subscribe(e => {
+            this.dummyData = e;
+        });
     }
 }
