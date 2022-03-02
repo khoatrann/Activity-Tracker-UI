@@ -3,25 +3,21 @@ import { MatDialog } from '@angular/material/dialog';
 import { ModalComponent } from '../modal/modal.component';
 
 @Component({
-    selector: 'app-about',
-    templateUrl: './about.component.html',
-    styleUrls: ['./about.component.css']
+    selector: 'app-upload',
+    templateUrl: './upload.component.html',
+    styleUrls: ['./upload.component.css']
 })
 
-export class AboutComponent {
-    animal: string = "";
+export class UploadComponent {
     constructor(private dialog: MatDialog) {
-
     }
 
-    addTag() {
+    addPost() {
         const dialogRef = this.dialog.open(ModalComponent, {
             width: '1000px',
-            data: { animal: this.animal },
         });
 
         dialogRef.afterClosed().subscribe(e => {
-
         })
     }
 }

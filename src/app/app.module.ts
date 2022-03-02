@@ -8,9 +8,9 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
 import { MatButtonModule } from '@angular/material/button';
-import { HomeComponent } from '../app/home/home.component';
-import { SearchComponent } from './search/search.component';
-import { AboutComponent } from './about/about.component';
+import { HomeComponent } from './components/home/home.component';
+import { SearchComponent } from './components/search/search.component';
+import { SettingsComponent } from './components/settings/settings.component';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatFormFieldModule } from '@angular/material/form-field';
@@ -18,17 +18,20 @@ import { MatCardModule } from '@angular/material/card';
 import { HttpClientModule } from '@angular/common/http';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
-import { ModalComponent } from './modal/modal.component';
+import { ModalComponent } from './components/modal/modal.component';
 import { MatInputModule } from '@angular/material/input';
-
+import { MatProgressBarModule } from '@angular/material/progress-bar'
+import { FormsModule } from '@angular/forms';
+import { UploadComponent } from './components/upload/upload.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     SearchComponent,
-    AboutComponent,
-    ModalComponent
+    SettingsComponent,
+    ModalComponent, 
+    UploadComponent
   ],
   imports: [
     BrowserAnimationsModule,
@@ -46,7 +49,9 @@ import { MatInputModule } from '@angular/material/input';
     HttpClientModule,
     MatDialogModule,
     MatSlideToggleModule,
-    MatInputModule
+    MatInputModule,
+    MatProgressBarModule, 
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

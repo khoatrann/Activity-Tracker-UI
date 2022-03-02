@@ -1,0 +1,9 @@
+<div>
+    <mat-form-field>
+        <mat-icon matPrefix>search</mat-icon>
+        <input matInput type="search" placeholder="Search Here" class="search-input" [(ngModel)]="search" (ngModelChange)="setValue($event)">
+    </mat-form-field>
+    <p> {{search}} </p>
+    <div id="map" class="googlemaps">
+    </div>
+</div>

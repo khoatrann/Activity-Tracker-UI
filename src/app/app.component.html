@@ -4,7 +4,19 @@
       <mat-icon>menu</mat-icon>
     </button>
     <h1>Activity Tracker</h1>
-    <span flex></span>
+    <span class="example-spacer"></span>
+    <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+      <mat-icon routerLink="/Home" routerLinkActive="active">home</mat-icon>
+    </button>
+    <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
+      <mat-icon routerLink="/Search" routerLinkActive="active">search</mat-icon>
+    </button>
+    <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
+      <mat-icon routerLink="/Upload" routerLinkActive="active">add_photo_alternate</mat-icon>
+    </button>
+    <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
+      <mat-icon routerLink="/Settings" routerLinkActive="active">settings</mat-icon>
+    </button>
   </mat-toolbar-row>
 </mat-toolbar>
 
@@ -13,7 +25,7 @@
     <mat-nav-list>
       <a mat-list-item routerLink="/Home" routerLinkActive="active">Home<mat-icon>home</mat-icon></a>
       <a mat-list-item routerLink="/Search" routerLinkActive="active">Search<mat-icon>search</mat-icon></a>
-      <a mat-list-item routerLink="/Upload" routerLinkActive="active">Upload Picture<mat-icon>add_photo_alternate
+      <a mat-list-item routerLink="/Upload" routerLinkActive="active">Upload<mat-icon>add_photo_alternate
         </mat-icon></a>
       <a mat-list-item routerLink="/Settings" routerLinkActive="active">Settings<mat-icon>settings</mat-icon></a>
     </mat-nav-list>

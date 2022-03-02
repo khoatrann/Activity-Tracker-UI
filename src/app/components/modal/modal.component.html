@@ -1,0 +1,35 @@
+<ol>
+    <mat-progress-bar mode="determinate" [value]="progress"></mat-progress-bar>
+    <br>
+    <div *ngIf="step==1">
+        <mat-form-field appearance="fill">
+            <mat-label>Name</mat-label>
+            <input type="text" matInput placeholder="Name" required>
+        </mat-form-field>
+        <br>
+        <mat-form-field appearance="fill">
+            <mat-label>Email</mat-label>
+            <input type="email" matInput placeholder="Ex. name@example.com" required>
+        </mat-form-field>
+    </div>
+    <div *ngIf="step==1" style="position: inherit;">
+        <mat-card style="width: 200px; align-self: start;" *ngIf="step==1">
+            <mat-calendar [(selected)]="selected"></mat-calendar>
+        </mat-card>
+    </div>
+    <div id="map" class="googlemaps" [hidden]="keepHidden()">
+
+    </div>
+    <div *ngIf="step==3">
+        <p><strong>Submit Form?</strong></p>
+    </div>
+    <div>
+        <button mat-raised-button style="float: left;" (click)="previous()" *ngIf="step<= 3 && step > 1">Previous</button>
+    </div>
+    <div>
+        <button mat-raised-button color="primary" style="float: right;" (click)="next()" *ngIf="step!=3">Next</button>
+    </div>
+    <div>
+        <button mat-raised-button color="primary" style="float: right;" (click)="close()" *ngIf="step==3">Submit</button>
+    </div>
+</ol>
