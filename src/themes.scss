@@ -9,7 +9,7 @@ $custom-typography: mat-typography-config(
 );
 @include angular-material-typography($custom-typography);
 
-// Default colors
+// Light colors
 $my-app-primary: mat-palette($mat-indigo);
 $my-app-accent:  mat-palette($mat-pink);
 $my-app-warn:    mat-palette($mat-red);
@@ -26,7 +26,7 @@ $dark-accent:  mat-palette($mat-blue-grey);
 $dark-warn:    mat-palette($mat-red);
 
 
-$dark-theme:   mat-dark-theme($dark-primary, $dark-accent, $dark-warn);
+$dark-theme: mat-dark-theme($dark-primary, $dark-accent, $dark-warn);
 
 .dark-theme {
   @include angular-material-theme($dark-theme);

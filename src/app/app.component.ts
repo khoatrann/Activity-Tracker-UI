@@ -1,5 +1,5 @@
 import { DOCUMENT } from '@angular/common';
-import { Component, HostBinding, Inject, OnInit, Renderer2 } from '@angular/core';
+import { Component, Inject, OnInit, Renderer2 } from '@angular/core';
 import { DataService } from './services/data.service';
 
 @Component({
