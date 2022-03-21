@@ -1,0 +1,55 @@
+<div class="input-container">
+    <form (submit)="submit(postForm)" #postForm="ngForm">
+        <mat-form-field>
+            <input
+              matInput
+              type="text"
+              name="title"
+              ngModel
+              required
+              minlength="3"
+              placeholder="Post Title"
+              #title="ngModel">
+            <mat-error *ngIf="title.invalid">Please enter a post title.</mat-error>
+        </mat-form-field>
+        <mat-form-field>
+            <input
+              matInput
+              type="text"
+              name="subtitle"
+              ngModel
+              required
+              minlength="3"
+              placeholder="Post subTitle"
+              #subtitle="ngModel">
+            <mat-error *ngIf="subtitle.invalid">Please enter a post subtitle.</mat-error>
+        </mat-form-field>
+        <mat-form-field>
+            <input
+              matInput
+              type="url"
+              name="link"
+              ngModel
+              required
+              minlength="3"
+              placeholder="Post url"
+              #link="ngModel">
+            <mat-error *ngIf="link.invalid">Please enter a post link.</mat-error>
+        </mat-form-field>
+        <mat-form-field>
+            <textarea
+              matInput
+              rows="4"
+              name="content"
+              ngModel
+              required
+              placeholder="Post Content"
+              #content="ngModel"></textarea>
+            <mat-error *ngIf="content.invalid">Please enter post content.</mat-error>
+        </mat-form-field>
+        <div>
+            <button mat-raised-button color="primary" style="float: right;" type ="submit" >Submit</button>
+        </div>
+    </form>  
+</div>
+
