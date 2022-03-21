@@ -1,0 +1,16 @@
+
+<google-map
+    width = "100%"
+    height="100%"
+    [center] = "initialCoordinates"
+    [zoom] = "initialZoom"
+    (mapClick) = "addMarker($event)"
+    >
+  <map-marker #marker = "mapMarker"
+            *ngFor = "let markerPosition of markerPositions"
+              [position] = "markerPosition"
+              [options] = "markerOptions"
+              (mapClick) = "openInfoWindow(marker)"
+              >
+  </map-marker>
+</google-map>

@@ -1,0 +1,27 @@
+<mat-toolbar color="primary">
+  <mat-toolbar-row>
+    <button mat-icon-button >
+      <h1>places-n-tales</h1>
+    </button>
+    <span class="example-spacer"></span>
+    <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
+      <mat-icon routerLink="/Settings" routerLinkActive="active">settings</mat-icon>
+    </button>
+  </mat-toolbar-row>
+</mat-toolbar>
+<mat-grid-list cols="8" rowHeight="50%">
+  <mat-grid-tile
+      [colspan]=tile1.cols
+      [rowspan]=tile1.rows
+      [style.background]= tile1.color>
+      <mat-card>
+        <div id="map"><app-my-map></app-my-map></div>
+     </mat-card>
+  </mat-grid-tile>
+  <mat-grid-tile
+      [colspan]=tile2.cols
+      [rowspan]=tile2.rows
+      [style.background]= tile2.color>
+      <app-stories class = storys> </app-stories>
+  </mat-grid-tile>
+</mat-grid-list>

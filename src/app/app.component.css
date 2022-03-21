@@ -1,0 +1,33 @@
+.h1{
+    font-size: x-large;
+}
+
+.example-spacer {
+    flex: 1 1 auto;
+}
+
+.mat-icon{
+    font-size: 30px;
+}
+
+
+#map {
+    height: 100%;
+    
+  }
+
+.mat-card{
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    right: 15px;
+    bottom: 15px;
+    background-color: coral;
+    padding: 5px;
+  }
+  .storys{
+      width: 95%;
+  }
+  
