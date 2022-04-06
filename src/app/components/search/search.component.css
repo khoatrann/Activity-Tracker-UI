@@ -1,10 +1,11 @@
 mat-form-field{
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: right;
     flex-direction: column;
 }
 
 .googlemaps{
-    height: 80%;
+    height: 40%;
 }
+
