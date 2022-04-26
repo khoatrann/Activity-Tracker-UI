@@ -13,7 +13,6 @@ export class AppComponent {
   tile2 =  { cols: 3, rows: 2, color: 'lightgreen'}
 
 }
-
 export interface Tile {
   color: string;
   cols: number;

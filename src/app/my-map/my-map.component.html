@@ -4,13 +4,18 @@
     height="100%"
     [center] = "initialCoordinates"
     [zoom] = "initialZoom"
-    (mapClick) = "addMarker($event)"
+    (mapClick) = "updateCurrentMarker($event)"
     >
   <map-marker #marker = "mapMarker"
             *ngFor = "let markerPosition of markerPositions"
               [position] = "markerPosition"
               [options] = "markerOptions"
-              (mapClick) = "openInfoWindow(marker)"
-              >
+              (mapClick) = "selectStoryMarker(marker)"
+            >
+  </map-marker>
+  <map-marker
+              [position] = "currentMarkerPosition"
+              [options] = "currentMarkerOptions"
+            >
   </map-marker>
 </google-map>

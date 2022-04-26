@@ -1,32 +1,18 @@
 const express = require("express");
 const bodyParser = require("body-parser");
+const mongoose = require("mongoose")
+
+const Post = require('./models/post')
 
 const app = express();
 
-const posts = [
-  {
-    id: 1,
-    title:'Pomeranian',
-    subtitle:'nice dog',
-    content: 'This is my first dog',
-    link:'../../../assets/pomeranian.jpg'
-  },
-  {
-    id: 2,
-    title:'Shih Tzu',
-    subtitle:'bad dog',
-    content: 'This is my second dog',
-    link:'../../../assets/shih-tzu.jpeg'
-  },
-  {
-    id: 3,
-    title:'Shiba Inu',
-    subtitle:'dog barks a lot',
-    content: 'This is my third dog',
-    link:'https://material.angular.io/assets/img/examples/shiba2.jpg'
-  }
-];
-
+mongoose.connect("mongodb+srv://alex_bartlett:dbeiHhTqVTqsqgQV@cluster0.4yaxu.mongodb.net/places_db?retryWrites=true&w=majority")
+.then(() => {
+  console.log('connected to database')
+})
+.catch(() => {
+  console.log('connection failed')
+})
 
 app.use(bodyParser.json());
 
@@ -44,20 +30,43 @@ app.use((req, res, next) => {
 });
 
 app.post("/api/posts", (req, res, next) => {
-  const post = req.body;
-  posts.push(post);
-  console.log(post);
+  const post = new Post({
+    title: req.body.title,
+    subtitle: req.body.subtitle,
+    content: req.body.content,
+    link: req.body.link,
+    lat: req.body.lat,
+    long: req.body.long,
+    addr: req.body.addr
+  });
+  post.save();
   res.status(201).json({
     message: 'Post added successfully'
   });
 });
 
 app.get("/api/posts", (req, res, next) => {
-  
-  res.status(200).json({
-    message: "Posts fetched successfully!",
-    posts: posts
+  if (typeof(req.query.lat) != 'undefined'){
+    Post.find({lat:req.query.lat,long:req.query.long})
+  .then(documents => {
+    res.status(200).json({
+      message: "Posts fetched successfully!",
+      posts: documents
+    });
   });
-});
+  }
+  else{
+    Post.find()
+  .then(documents => {
 
+    res.status(200).json({
+      message: "Posts fetched successfully!",
+      posts: documents
+    });
+  });
+  }
+
+
+});
 module.exports = app;
+
