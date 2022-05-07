@@ -3,7 +3,7 @@
 }
 
 .example-spacer {
-    flex: 1 1 auto;
+  flex: 1 1 auto;
 }
 
 .mat-icon{
@@ -13,7 +13,7 @@
 
 #map {
     height: 100%;
-    
+
   }
 
 .mat-card{
@@ -30,4 +30,3 @@
   .storys{
       width: 95%;
   }
-  

@@ -1,17 +1,20 @@
 <div class="input-container">
     <form (submit)="submit(postForm)" #postForm="ngForm">
+      <p>
         <mat-form-field>
-            <input
-              matInput
-              type="text"
-              name="title"
-              ngModel
-              required
-              minlength="3"
-              placeholder="Post Title"
-              #title="ngModel">
-            <mat-error *ngIf="title.invalid">Please enter a post title.</mat-error>
+          <input
+            matInput
+            type="text"
+            name="title"
+            ngModel
+            required
+            minlength="3"
+            placeholder="Post Title"
+            #title="ngModel">
+          <mat-error *ngIf="title.invalid">Please enter your post title.</mat-error>
         </mat-form-field>
+      </p>
+      <p>
         <mat-form-field>
             <input
               matInput
@@ -20,10 +23,12 @@
               ngModel
               required
               minlength="3"
-              placeholder="Post subTitle"
+              placeholder="Post Subtitle"
               #subtitle="ngModel">
-            <mat-error *ngIf="subtitle.invalid">Please enter a post subtitle.</mat-error>
+            <mat-error *ngIf="subtitle.invalid">Please enter your post subtitle.</mat-error>
         </mat-form-field>
+      </p>
+      <p>
         <mat-form-field>
             <input
               matInput
@@ -32,24 +37,28 @@
               ngModel
               required
               minlength="3"
-              placeholder="Post url"
+              placeholder="Image url"
               #link="ngModel">
-            <mat-error *ngIf="link.invalid">Please enter a post link.</mat-error>
+            <mat-error *ngIf="link.invalid">Please enter an image link.</mat-error>
         </mat-form-field>
-        <mat-form-field>
+      </p>
+      <p>
+        <mat-form-field appearance="fill">
             <textarea
               matInput
-              rows="4"
+              rows="20"
+              cols="80"
               name="content"
               ngModel
               required
-              placeholder="Post Content"
-              #content="ngModel"></textarea>
-            <mat-error *ngIf="content.invalid">Please enter post content.</mat-error>
+              placeholder="Story Content"
+              #content="ngModel">
+            </textarea>
+            <mat-error *ngIf="content.invalid">Please enter your story.</mat-error>
         </mat-form-field>
-        <div>
-            <button mat-raised-button color="primary" style="float: right;" type ="submit" >Submit</button>
-        </div>
-    </form>  
+      </p>
+      <div>
+          <button data-testid="submit-button" mat-raised-button color="primary" style="float:right;" type ="submit" >Submit</button>
+      </div>
+    </form>
 </div>
-

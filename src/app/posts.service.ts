@@ -15,11 +15,14 @@ export class PostsService {
   constructor(private http: HttpClient) {}
 
   getPosts(lat: string,long:string) {
+    console.log('called5')
     this.http
       .get<{ message: string; posts: Post[] }>(
         "http://localhost:3000/api/posts", {params:{lat:lat,long:long}}
       )
       .subscribe(postData => {
+        console.log(postData.posts)
+        console.log("posts6")
         this.posts = postData.posts;
         this.postsUpdated.next([...this.posts]);
       });

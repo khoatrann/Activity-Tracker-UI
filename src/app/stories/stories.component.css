@@ -1,7 +1,7 @@
 .example-card{
     height: 100%;
     width: 95%;
-}
+  }
 .example-viewport {
     height: 840px;
     width: 100%;
@@ -13,12 +13,11 @@
     padding-left: 10px;
     width: 95%;
   }
-  .container {
+.container {
     height: 50px;
     position: relative;
   }
-  
-  .center {
+.center {
     margin: 0;
     position: absolute;
     top: 75%;
@@ -26,4 +25,3 @@
     -ms-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
   }
-  

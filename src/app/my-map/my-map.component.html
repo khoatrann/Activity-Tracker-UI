@@ -1,9 +1,21 @@
+<div>
+  <label class="my-search-box-label">Enter address</label>
+  <input
+    type="text"
+    class="my-search-box"
+    (keydown.enter)="$event.preventDefault()"
+    placeholder="Search Location"
+    type="text"
+    #search
+  />
+</div>
 
 <google-map
     width = "100%"
     height="100%"
     [center] = "initialCoordinates"
     [zoom] = "initialZoom"
+    [options] = "mapOptions"
     (mapClick) = "updateCurrentMarker($event)"
     >
   <map-marker #marker = "mapMarker"
@@ -11,6 +23,7 @@
               [position] = "markerPosition"
               [options] = "markerOptions"
               (mapClick) = "selectStoryMarker(marker)"
+
             >
   </map-marker>
   <map-marker

@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">9.52% </span>
+                <span class="strong">58.33% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>2/21</span>
+                <span class='fraction'>14/24</span>
             </div>
         
             
@@ -37,16 +37,16 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">44.44% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>0/9</span>
+                <span class='fraction'>4/9</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">5% </span>
+                <span class="strong">56.52% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>1/20</span>
+                <span class='fraction'>13/23</span>
             </div>
         
             
@@ -61,7 +61,7 @@
             </div>
         </template>
     </div>
-    <div class='status-line low'></div>
+    <div class='status-line medium'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -121,7 +121,10 @@
 <a name='L56'></a><a href='#L56'>56</a>
 <a name='L57'></a><a href='#L57'>57</a>
 <a name='L58'></a><a href='#L58'>58</a>
-<a name='L59'></a><a href='#L59'>59</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L59'></a><a href='#L59'>59</a>
+<a name='L60'></a><a href='#L60'>60</a>
+<a name='L61'></a><a href='#L61'>61</a>
+<a name='L62'></a><a href='#L62'>62</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -129,27 +132,30 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -187,27 +193,30 @@ import { Post } from "./post.model";
 &nbsp;
 @Injectable({ providedIn: "root" })
 export class PostsService {
-  private <span class="cstat-no" title="statement not covered" >posts: Post[] = [];</span>
-  private <span class="cstat-no" title="statement not covered" >postsUpdated = new Subject&lt;Post[]&gt;();</span>
+  private posts: Post[] = [];
+  private postsUpdated = new Subject&lt;Post[]&gt;();
 &nbsp;
-  private <span class="cstat-no" title="statement not covered" >postsAll: Post[] = [];</span>
-  private <span class="cstat-no" title="statement not covered" >postsAllUpdated = new Subject&lt;Post[]&gt;();</span>
+  private postsAll: Post[] = [];
+  private postsAllUpdated = new Subject&lt;Post[]&gt;();
 &nbsp;
-<span class="fstat-no" title="function not covered" >  constructor(private <span class="cstat-no" title="statement not covered" >h</span>ttp: HttpClient)</span> {}
+  constructor(private http: HttpClient) {}
 &nbsp;
-<span class="fstat-no" title="function not covered" >  getPosts(</span>lat: string,long:string) {
-<span class="cstat-no" title="statement not covered" >    this.http</span>
+  getPosts(lat: string,long:string) {
+    console.log('called5')
+    this.http
       .get&lt;{ message: string; posts: Post[] }&gt;(
         "http://localhost:3000/api/posts", {params:{lat:lat,long:long}}
       )
-      .subscribe(<span class="fstat-no" title="function not covered" >postData </span>=&gt; {
-<span class="cstat-no" title="statement not covered" >        this.posts = postData.posts;</span>
-<span class="cstat-no" title="statement not covered" >        this.postsUpdated.next([...this.posts]);</span>
+      .subscribe(postData =&gt; {
+        console.log(postData.posts)
+        console.log("posts6")
+        this.posts = postData.posts;
+        this.postsUpdated.next([...this.posts]);
       });
   }
 &nbsp;
-<span class="fstat-no" title="function not covered" >  getPostUpdateListener(</span>) {
-<span class="cstat-no" title="statement not covered" >    return this.postsUpdated.asObservable();</span>
+  getPostUpdateListener() {
+    return this.postsUpdated.asObservable();
   }
 &nbsp;
 <span class="fstat-no" title="function not covered" >  getPostsAll(</span>) {
@@ -244,7 +253,7 @@ export class PostsService {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at Mon Apr 25 2022 17:33:11 GMT-0400 (Eastern Daylight Time)
+                at Sun May 01 2022 19:52:56 GMT-0400 (Eastern Daylight Time)
             </div>
         <script src="../prettify.js"></script>
         <script>

@@ -34,6 +34,7 @@ export class StoriesComponent implements OnInit {
       });
     this.locationService.currentLocationMessage.subscribe(msg =>{
       this.locationInfo = msg;
+      console.log(this.locationInfo.lat + " " + this.locationInfo.long)
       if(this.locationInfo.addr == "none"){
         this.locationText = "lat: " + this.locationInfo.lat + ", " + "long: " + this.locationInfo.long
       }
@@ -48,7 +49,7 @@ export class StoriesComponent implements OnInit {
 
   buttonClicked(){
     const dialogRef = this.dialog.open(ModalComponent, {
-      width: '100%',
+      width: '25%',
       data: {info: this.locationInfo}
   });
 

@@ -11,7 +11,7 @@ import {LocationInfo} from "../services/location.service";
 })
 
 export class ModalComponent {
-  selected: Date | any;
+  //selected: Date | any;
   constructor( private dialogRef: MatDialogRef<ModalComponent>, @Inject(MAT_DIALOG_DATA) public data: {info: LocationInfo}, public postsService: PostsService) {
   }
   submit(form: NgForm){
